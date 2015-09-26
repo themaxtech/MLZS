@@ -27,12 +27,12 @@ $.jStorage.set("useroriname", '');
 */
 
 
-var arung1 = $.jStorage.get("username");
-var arung2 = $.jStorage.get("status");
-var arung3 = $.jStorage.get("userpass");
-var arung4 = $.jStorage.get("userclass");
-var arung5 = $.jStorage.get("usersec");
-var arung6 = $.jStorage.get("useroriname"); 
+var arung1 = '';
+var arung2 = '';
+var arung3 = '';
+var arung4 = '';
+var arung5 = '';
+var arung6 = ''; 
  
 
  var userHandler = {
@@ -179,7 +179,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                             $.jStorage.set("usersec", result.status3);
                             $.jStorage.set("useroriname", result.status4);
 
-                            $.jStorage.set("mykey", userHandler.status);
+                            $.jStorage.set("mykey", userHandler.status); 
 
                             //$.mobile.changePage("#second");
                             $(document).on("pagebeforeshow","#arunhome",function(event){
@@ -1353,9 +1353,7 @@ $(document).on("pagebeforehide","year_calendar",function(event){
     //alert("hii");
     $( ".ui-content" ).remove();
 
-});
-
- 
+}); 
 
 $(document).on('pageshow', '#arunhome', function(){     
         
@@ -1365,6 +1363,24 @@ $(document).on('pageshow', '#arunhome', function(){
         $.mobile.changePage("#login"); 
 
     } else{
+
+        arung1 = $.jStorage.get("username");
+        arung2 = $.jStorage.get("status");
+        arung3 = $.jStorage.get("userpass");
+        arung4 = $.jStorage.get("userclass");
+        arung5 = $.jStorage.get("usersec");
+        arung6 = $.jStorage.get("useroriname"); 
+
+
+        userHandler.username    = arung1;
+        userHandler.userpass    = arung3;
+        userHandler.userclass   = arung4;
+        userHandler.usersec     = arung5;
+        userHandler.useroriname = arung6;
+        userHandler.status      = arung2;
+
+
+ 
 
        //alert('My name is ' + userHandler.username);
        $("#usernamea", $.mobile.activePage).val(userHandler.username);
