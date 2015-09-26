@@ -1361,7 +1361,7 @@ $(document).on('pageshow', '#arunhome', function(){
         
     var valuesss = $.jStorage.get("mykey");
     if (!valuesss) {
-        alert("hi" + valuesss);
+        //alert("hi" + valuesss);
         $.mobile.changePage("#login"); 
 
     } else{
