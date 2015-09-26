@@ -148,7 +148,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                 $.jStorage.set("username", userHandler.username);
 
                 arung7 = $.jStorage.get("appid"); 
-                
+                alert(arung7);
                 // Send data to server through the Ajax call
                 // action is functionality we want to call and outputJSON is our data
                 
