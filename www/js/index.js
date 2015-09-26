@@ -139,13 +139,12 @@ var app = {
 
 $(document).on('pagecontainershow', function (e, ui) {
     var activePage = $(':mobile-pagecontainer').pagecontainer('getActivePage');
-    if(activePage.attr('id') === 'login') {  
-        
+    if(activePage.attr('id') === 'login') { 
         $(document).on('click', '#submit', function() { // catch the form's submit event
             if($('#username').val().length > 0 && $('#password').val().length > 0){
              
                 userHandler.username = $('#username').val();
-                $.jStorage.set("username", $('#username').val());
+                $.jStorage.set("username", userHandler.username);
                 // Send data to server through the Ajax call
                 // action is functionality we want to call and outputJSON is our data
                 
@@ -166,6 +165,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                     success: function (result) {
                         // Check if authorization process was successful
                        if(result.status == 'success') {
+                        alert("Received Success");
                            
                             userHandler.status = result.status;
                             userHandler.userpass = result.status1;
@@ -200,6 +200,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                     error: function (request,error) {
                         // This callback function will trigger on unsuccessful action               
                         alert('Network error has occurred please try again!');
+                        alert(error);
                          
                     }
                 });                  
@@ -1452,8 +1453,7 @@ $(document).on('pageshow', '#arunleave', function(){
 
         var outputmy = (daymy<10 ? '0' : '') + daymy + '-' +
             (monthmy<10 ? '0' : '') + monthmy + '-' +
-            dmy.getFullYear();
-             
+            dmy.getFullYear(); 
         
        $("#regnot", $.mobile.activePage).val(userHandler.username);
        $("#usernamet", $.mobile.activePage).val(userHandler.useroriname); 
