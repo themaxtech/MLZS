@@ -32,7 +32,8 @@ var arung2 = '';
 var arung3 = '';
 var arung4 = '';
 var arung5 = '';
-var arung6 = ''; 
+var arung6 = '';
+var arung7 = ''; 
  
 
  var userHandler = {
@@ -42,7 +43,7 @@ var arung6 = '';
     usersec     : arung5,
     useroriname : arung6,
     status      : arung2,
-    appid       : ''
+    appid       : arung7
 }
 
 var app = {
@@ -87,6 +88,7 @@ var app = {
     },
     // result contains any message sent from the plugin call
     successHandler: function(result) {
+        $.jStorage.set("appid", result);
         userHandler.appid = result;
         //alert('Callback Success! Result = '+result); 
     },
@@ -164,8 +166,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                     success: function (result) {
                         // Check if authorization process was successful
                        if(result.status == 'success') {
-                        alert("Received Success");
-                           
+                            
                             userHandler.status = result.status;
                             userHandler.userpass = result.status1;
                             userHandler.userclass = result.status2;
@@ -198,8 +199,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                     error: function (request,error) {
                         // This callback function will trigger on unsuccessful action               
                         alert('Network error has occurred please try again!');
-                        alert(error);
-                         
+                        
                     }
                 });                  
             } else {
@@ -1199,7 +1199,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "</style>" +
                         "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
                         "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
-                        "<h2>Message</h2></div><div data-role='content'>" + 
+                        "<h2>Image Gallery</h2></div><div data-role='content'>" + 
                         "</div><div data-role='footer' data-position='fixed'><p>  &copy;  2015 www.themaxtech.com</p></div></div>"; 
 
                         $.mobile.activePage.after(stud_prof);
@@ -1366,6 +1366,7 @@ $(document).on('pageshow', '#arunhome', function(){
         arung4 = $.jStorage.get("userclass");
         arung5 = $.jStorage.get("usersec");
         arung6 = $.jStorage.get("useroriname"); 
+        arung7 = $.jStorage.get("appid"); 
 
 
         userHandler.username    = arung1;
@@ -1374,6 +1375,7 @@ $(document).on('pageshow', '#arunhome', function(){
         userHandler.usersec     = arung5;
         userHandler.useroriname = arung6;
         userHandler.status      = arung2;
+        userHandler.appid       = arung7;
 
 
  
