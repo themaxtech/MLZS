@@ -179,7 +179,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                             $.jStorage.set("usersec", result.status3);
                             $.jStorage.set("useroriname", result.status4);
 
-                            $.jStorage.set("mykey", userHandler.status) 
+                            $.jStorage.set("mykey", userHandler.status);
 
                             //$.mobile.changePage("#second");
                             $(document).on("pagebeforeshow","#arunhome",function(event){
