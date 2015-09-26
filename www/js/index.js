@@ -143,15 +143,18 @@ $(document).on('pagecontainershow', function (e, ui) {
     if(activePage.attr('id') === 'login') { 
         $(document).on('click', '#submit', function() { // catch the form's submit event
             if($('#username').val().length > 0 && $('#password').val().length > 0){
-             
+                
                 userHandler.username = $('#username').val();
                 $.jStorage.set("username", userHandler.username);
+
+                arung7 = $.jStorage.get("appid"); 
+                
                 // Send data to server through the Ajax call
                 // action is functionality we want to call and outputJSON is our data
                 
                     $.ajax({url: 'http://themaxtech.com/app/auth.php',
                     //$.ajax({url: 'auth.php',
-                    data: {action : 'authorization', deviceid: userHandler.appid, formData : $('#check-user').serialize()},
+                    data: {action : 'authorization', deviceid: arung7, formData : $('#check-user').serialize()},
                     type: 'post',                  
                     async: 'true',
                     dataType: 'json',
