@@ -88,8 +88,7 @@ var app = {
     // result contains any message sent from the plugin call
     successHandler: function(result) {
         userHandler.appid = result;
-        alert('Callback Success! Result = '+result);
-
+        //alert('Callback Success! Result = '+result); 
     },
     errorHandler:function(error) {
         alert(error);
@@ -177,8 +176,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                             $.jStorage.set("userpass", result.status1);
                             $.jStorage.set("userclass", result.status2);
                             $.jStorage.set("usersec", result.status3);
-                            $.jStorage.set("useroriname", result.status4);
-
+                            $.jStorage.set("useroriname", result.status4); 
                             $.jStorage.set("mykey", userHandler.status); 
 
                             //$.mobile.changePage("#second");
@@ -243,10 +241,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
                         var counter = 0; 
                          
-                       if(result.status == 'success') { 
-                            
-                     
-                       
+                       if(result.status == 'success') {  
                 
                         stud_prof = 
                         "<style>" +
