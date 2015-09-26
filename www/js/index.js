@@ -88,8 +88,9 @@ var app = {
     },
     // result contains any message sent from the plugin call
     successHandler: function(result) {
-        $.jStorage.set("appid", result);
+        
         userHandler.appid = result;
+        $.jStorage.set("appid", userHandler.appid);
         //alert('Callback Success! Result = '+result); 
     },
     errorHandler:function(error) {
@@ -148,13 +149,13 @@ $(document).on('pagecontainershow', function (e, ui) {
                 $.jStorage.set("username", userHandler.username);
 
                 arung7 = $.jStorage.get("appid"); 
-                alert(arung7);
+                userHandler.appid = $.jStorage.get("appid"); 
                 // Send data to server through the Ajax call
                 // action is functionality we want to call and outputJSON is our data
                 
                     $.ajax({url: 'http://themaxtech.com/app/auth.php',
                     //$.ajax({url: 'auth.php',
-                    data: {action : 'authorization', deviceid: arung7, formData : $('#check-user').serialize()},
+                    data: {action : 'authorization', deviceid: userHandler.appid, formData : $('#check-user').serialize()},
                     type: 'post',                  
                     async: 'true',
                     dataType: 'json',
