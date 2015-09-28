@@ -88,7 +88,6 @@ var app = {
     },
     // result contains any message sent from the plugin call
     successHandler: function(result) {
-        
         userHandler.appid = result;
         $.jStorage.set("appid", userHandler.appid);
         //alert('Callback Success! Result = '+result); 
@@ -345,9 +344,9 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
-                        "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
-                        "<h2>Message</h2></div><div data-role='content'>" + 
+                        "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed' class='toolbar'>" + 
+                        " <h2>Message</h2><a class='back' href='#arunhome'>Back</a></div>" +
+                        "<div data-role='content'>" + 
                         "</div><div data-role='footer' data-position='fixed'>"+
                         "<p>  &copy;  2015 www.themaxtech.com</p></div></div>"; 
 
