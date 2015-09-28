@@ -63,7 +63,7 @@ var app = {
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
-     onDeviceReady: function() {
+    onDeviceReady: function() {
         alert("deviceready");
         if (parseFloat(window.device.version) >= 7.0) {
           document.body.style.marginTop = "20px";
@@ -157,7 +157,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                 // Send data to server through the Ajax call
                 // action is functionality we want to call and outputJSON is our data
                 
-                    $.ajax({url: 'http://themaxtech.com/app/auth.php',
+                    $.ajax({url: 'http://mlzs.in/ios/auth.php',
                     //$.ajax({url: 'auth.php',
                     data: {action : 'authorization', deviceid: userHandler.appid, formData : $('#check-user').serialize()},
                     type: 'post',                  
@@ -230,7 +230,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                 // Send data to server through the Ajax call
                 // action is functionality we want to call and outputJSON is our data
                 
-                    $.ajax({url: 'http://themaxtech.com/app/yearcal.php',
+                    $.ajax({url: 'http://mlzs.in/ios/yearcal.php',
                     //$.ajax({url: 'yearcal.php',
                     data: {action : 'authorization', formData : $('#check-cal').serialize()},
                     type: 'post',                  
@@ -317,7 +317,7 @@ $(document).on('pagecontainershow', function (e, ui) {
         $(document).on('click', '#homesubmit', function() { // catch the form's submit event
 
             if($('#usernameb').val().length > 0 && $('#passwordb').val().length > 0){
-                    $.ajax({url: 'http://themaxtech.com/app/mes.php',
+                    $.ajax({url: 'http://mlzs.in/ios/mes.php',
                     //$.ajax({url: 'mes.php',
                     data: {action : 'authorization', formData : $('#check-mess').serialize()},
                     type: 'post',                  
@@ -408,7 +408,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernamec').val().length > 0 && $('#passwordc').val().length > 0){
 
-                    $.ajax({url: 'http://themaxtech.com/app/pro.php',
+                    $.ajax({url: 'http://mlzs.in/ios/pro.php',
                     //$.ajax({url: 'pro.php',
                     data: {action : 'authorization', formData : $('#check-pro').serialize()},
                     type: 'post',                  
@@ -512,7 +512,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernamee').val().length > 0 && $('#passworde').val().length > 0){
 
-                    $.ajax({url: 'http://themaxtech.com/app/homework.php',
+                    $.ajax({url: 'http://mlzs.in/ios/homework.php',
                     //$.ajax({url: 'homework.php',
                     data: {action : 'authorization', formData : $('#check-homework').serialize()},
                     type: 'post',                  
@@ -619,7 +619,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernamef').val().length > 0 && $('#passwordf').val().length > 0){
 
-                    $.ajax({url: 'http://themaxtech.com/app/food.php',
+                    $.ajax({url: 'http://mlzs.in/ios/food.php',
                     //$.ajax({url: 'food.php',
                     data: {action : 'authorization', formData : $('#check-food').serialize()},
                     type: 'post',                  
@@ -708,7 +708,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernameo').val().length > 0 && $('#passwordo').val().length > 0){
 
-                    $.ajax({url: 'http://themaxtech.com/app/leave.php',
+                    $.ajax({url: 'http://mlzs.in/ios/leave.php',
                     //$.ajax({url: 'leave.php',
                     data: {action : 'authorization', formData : $('#check-leavelist').serialize()},
                     type: 'post',                  
@@ -794,7 +794,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernameh').val().length > 0 && $('#passwordh').val().length > 0){
 
-                    $.ajax({url: 'http://themaxtech.com/app/report.php',
+                    $.ajax({url: 'http://mlzs.in/ios/report.php',
                     //$.ajax({url: 'report.php',
                     data: {action : 'authorization', formData : $('#check-report').serialize()},
                     type: 'post',                  
@@ -965,7 +965,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernamei').val().length > 0 && $('#passwordi').val().length > 0){
 
-                    $.ajax({url: 'http://themaxtech.com/app/exam.php',
+                    $.ajax({url: 'http://mlzs.in/ios/exam.php',
                     //$.ajax({url: 'exam.php',
                     data: {action : 'authorization', formData : $('#check-exam').serialize()},
                     type: 'post',                  
@@ -1077,7 +1077,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernamej').val().length > 0 && $('#passwordj').val().length > 0){
 
-                    $.ajax({url: 'http://themaxtech.com/app/time.php',
+                    $.ajax({url: 'http://mlzs.in/ios/time.php',
                     //$.ajax({url: 'time.php',
                     data: {action : 'authorization', formData : $('#check-time').serialize()},
                     type: 'post',                  
@@ -1171,7 +1171,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernamek').val().length > 0 && $('#passwordk').val().length > 0){
 
-                    $.ajax({url: 'http://themaxtech.com/app/gallery.php',
+                    $.ajax({url: 'http://mlzs.in/ios/gallery.php',
                     //$.ajax({url: 'gallery.php',
                     data: {action : 'authorization', formData : $('#check-image').serialize()},
                     type: 'post',                  
@@ -1276,7 +1276,7 @@ $(document).on('pagecontainershow', function (e, ui) {
         $(document).on('click', '#leavesubmit', function() { // catch the form's submit event
             if($('#regnot').val().length > 0 && $('#usernamet').val().length > 0 && $('#clat').val().length > 0 && $('#sect').val().length > 0 && $('#datt').val().length > 0 && $('#messt').val().length > 0){
                    
-                    $.ajax({url: 'http://themaxtech.com/app/leaveform.php',
+                    $.ajax({url: 'http://mlzs.in/ios/leaveform.php',
                     //$.ajax({url: 'leaveform.php',
                     data: {action : 'authorization', formData : $('#check-leave').serialize()},
                     type: 'post',                  
