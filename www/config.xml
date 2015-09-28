@@ -25,7 +25,10 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" /> 
     <preference name="DisallowOverscroll" value="true" />
+    <!-- Don't hide the O/S's status bar -->
     <preference name="fullscreen" value="false" />
+    <!-- iOS: Obey the app's viewport meta tag -->
+    <preference name="EnableViewportScale" value="true"/>
     
     <icon src="icon.png" />
     
