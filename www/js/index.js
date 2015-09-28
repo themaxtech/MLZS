@@ -63,10 +63,11 @@ var app = {
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-
+     onDeviceReady: function() {
+        alert("deviceready");
         if (parseFloat(window.device.version) >= 7.0) {
           document.body.style.marginTop = "20px";
+          alert(parseFloat(window.device.version));
         }
         app.receivedEvent('deviceready');
     },
