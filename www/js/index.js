@@ -64,10 +64,9 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        alert("deviceready");
         if (parseFloat(window.device.version) >= 7.0) {
           document.body.style.marginTop = "20px";
-          document.write('<style type="text/css">body{-webkit-transform: translate3d(0,20px,0)}</style>');
+          
         }
         app.receivedEvent('deviceready');
     },
