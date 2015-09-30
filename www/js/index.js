@@ -264,7 +264,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "<div id='year_calendar' data-url='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
                         "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
                         "<h2>Year Calendar</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;  2015 www.themaxtech.com</p></div></div>"; 
+                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -353,7 +353,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
                         "<h2>Message</h2></div><div data-role='content'>" + 
                         "</div><div data-role='footer' data-position='fixed'>"+
-                        "<p>  &copy;  2015 www.themaxtech.com</p></div></div>"; 
+                        "<p>  &copy;   www.themaxtech.com</p></div></div>"; 
 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar");
@@ -445,7 +445,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
                         "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
                         "<h2>Profile</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;  2015 www.themaxtech.com</p></div></div>"; 
+                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -549,7 +549,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
                         "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
                         "<h2>Home Work</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;  2015 www.themaxtech.com</p></div></div>"; 
+                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
 
                         //$.mobile.activePage.after(stud_prof);
                         $.mobile.changePage("#year_calendar"); 
@@ -656,7 +656,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
                         "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
                         "<h2> Food Menu</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;  2015 www.themaxtech.com</p></div></div>"; 
+                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -744,7 +744,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
                         "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
                         "<h2>Leave Status</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;  2015 www.themaxtech.com</p></div></div>"; 
+                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -828,7 +828,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
                         "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
                         "<h2>Report Card</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;  2015 www.themaxtech.com</p></div></div>"; 
+                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -1002,7 +1002,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
                         "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
                         "<h2>Exam Time Table</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;  2015 www.themaxtech.com</p></div></div>"; 
+                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -1112,7 +1112,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
                         "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
                         "<h2>Class Time Table</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;  2015 www.themaxtech.com</p></div></div>"; 
+                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -1208,7 +1208,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
                         "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
                         "<h2>Image Gallery</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;  2015 www.themaxtech.com</p></div></div>"; 
+                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
