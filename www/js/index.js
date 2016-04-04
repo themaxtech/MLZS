@@ -34,7 +34,9 @@ var arung4 = '';
 var arung5 = '';
 var arung6 = '';
 var arung7 = ''; 
- 
+var arung111 = '';
+var arung222 = '';
+var newarun = ''; 
 
  var userHandler = {
     username    : arung1, 
@@ -43,7 +45,9 @@ var arung7 = '';
     usersec     : arung5,
     useroriname : arung6,
     status      : arung2,
-    appid       : arung7
+    appid       : arung7,
+    gcmid       : arung111,
+    wpnid       : arung222 
 }
 
 var app = {
@@ -82,19 +86,28 @@ var app = {
 
         //console.log('Received Event: ' + id);
         var pushNotification = window.plugins.pushNotification;
-        if (device.platform == 'android' || device.platform == 'Android') {
+      if (device.platform == 'android' || device.platform == 'Android' ) {
+            //alert("Android Register called");
+            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"2994127184","ecb":"app.onNotificationGCM"});
+        } else if(device.platform == "Win32NT"){
+            //alert("Windows Register called");
+            pushNotification.register(this.successHandler, this.errorHandler,{"channelName": "channelName","ecb": "app.onNotificationWP8","uccb": "app.channelHandler","errcb": "app.jsonErrorHandler"});
+            pushNotification.register(this.successHandler, this.errorHandler,{"channelName": "channelName","ecb": "app.onNotificationWP8","uccb": "app.channelHandler","errcb": "app.jsonErrorHandler"});
+            pushNotification.register(this.successHandler, this.errorHandler,{"channelName": "channelName","ecb": "app.onNotificationWP8","uccb": "app.channelHandler","errcb": "app.jsonErrorHandler"});
+            pushNotification.register(this.successHandler, this.errorHandler,{"channelName": "channelName","ecb": "app.onNotificationWP8","uccb": "app.channelHandler","errcb": "app.jsonErrorHandler"});
+            
+        } else { 
             //alert("Register called");
-            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"824841663931","ecb":"app.onNotificationGCM"});
-        }
-        else {
-            //alert("Register called");
-            pushNotification.register(this.successHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
-        }
+            pushNotification.register(this.successHandler, this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
+        } 
+
     },
     // result contains any message sent from the plugin call
     successHandler: function(result) {
-        userHandler.appid = result;
+        userHandler.appid = result;    
+        userHandler.wpnid =  result.uri;
         $.jStorage.set("appid", userHandler.appid);
+        $.jStorage.set("wpnid", userHandler.wpnid); 
         //alert('Callback Success! Result = '+result); 
     },
     errorHandler:function(error) {
@@ -106,7 +119,8 @@ var app = {
             case 'registered':
                 if ( e.regid.length > 0 )
                 {
-                    console.log("Regid " + e.regid);
+                    //console.log("Regid " + e.regid);
+                     $.jStorage.set("gcmid", e.regid);
                     //alert('registration id = '+e.regid);
                 }
             break;
@@ -114,10 +128,13 @@ var app = {
             case 'message':
               // this is the actual push notification. its format depends on the data model from the push server
               //alert('message = '+e.message+' msgcnt = '+e.msgcnt);
+               alert('message = ' + e.message + ' payload message: ' + e.payload.message + 
+                'e payload msgcnt: ' + e.payload.msgcnt + ' e.msg: ' + e.msg);
             break;
  
             case 'error':
               alert('GCM error = '+e.msg);
+
             break;
  
             default:
@@ -139,6 +156,20 @@ var app = {
             var snd = new Media(event.sound);
             snd.play();
         }
+    },
+    onNotificationWP8: function(e) {
+        //alert("hiii");
+        if (e.type == "toast" && e.jsonContent) {
+        pushNotification.showToastNotification(successHandler, errorHandler,
+        {
+            "Title": e.jsonContent["wp:Text1"], "Subtitle": e.jsonContent["wp:Text2"], "NavigationUri": e.jsonContent["wp:Param"]
+        });
+        }
+
+        if (e.type == "raw" && e.jsonContent) {
+            alert(e.jsonContent.Body);
+        }
+
     }
 };
 
@@ -159,7 +190,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                 
                     $.ajax({url: 'http://mlzs.in/ios/auth.php',
                     //$.ajax({url: 'auth.php',
-                    data: {action : 'authorization', deviceid: userHandler.appid, formData : $('#check-user').serialize()},
+                    data: {action : 'authorization', deviceid: userHandler.appid, gcmid: userHandler.gcmid,  formData : $('#check-user').serialize()},
                     type: 'post',                  
                     async: 'true',
                     dataType: 'json',
@@ -1358,7 +1389,30 @@ $(document).on("pagebeforehide","year_calendar",function(event){
     $( ".ui-content" ).remove();
 
 }); 
+$(document).on('pageshow', '#login', function(){     
+    var amnew = $.jStorage.get("wpnid");
+    var amnews = $.jStorage.get("appid");
+    var amnewd = $.jStorage.get("gcmid");
 
+    if (device.platform == 'android' || device.platform == 'Android' ) {
+        if (!amnewd) {
+            location.reload(); 
+        }      
+    } else if(device.platform == "Win32NT"){
+       if (!amnew) {
+        //alert("hi" + valuesss);
+            location.reload(); 
+            //$.mobile.changePage("#login");             
+        } else {
+            $("#vini", $.mobile.activePage).val(amnew);            
+        }             
+    } else {
+        if (!amnews) {
+         
+        }  
+    }        
+    
+});
 $(document).on('pageshow', '#arunhome', function(){     
         
     var valuesss = $.jStorage.get("mykey");
@@ -1375,6 +1429,8 @@ $(document).on('pageshow', '#arunhome', function(){
         arung5 = $.jStorage.get("usersec");
         arung6 = $.jStorage.get("useroriname"); 
         arung7 = $.jStorage.get("appid"); 
+        arung111 = $.jStorage.get("gcmid");
+        arung222 = $.jStorage.get("wpnid");  
 
 
         userHandler.username    = arung1;
@@ -1384,6 +1440,8 @@ $(document).on('pageshow', '#arunhome', function(){
         userHandler.useroriname = arung6;
         userHandler.status      = arung2;
         userHandler.appid       = arung7;
+        userHandler.gcmid       = arung111;
+        userHandler.wpnid       = arung222;
 
 
  
@@ -1395,8 +1453,8 @@ $(document).on('pageshow', '#arunhome', function(){
        $("#usernameb", $.mobile.activePage).val(userHandler.username);
        $("#passwordb", $.mobile.activePage).val(userHandler.userpass);
        $("#classb", $.mobile.activePage).val(userHandler.userclass);
-       $("#secb", $.mobile.activePage).val(userHandler.usersec);
-
+       $("#secb", $.mobile.activePage).val(userHandler.usersec); 
+       
        $("#usernamec", $.mobile.activePage).val(userHandler.username);
        $("#passwordc", $.mobile.activePage).val(userHandler.userpass);
 
